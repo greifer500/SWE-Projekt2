@@ -44,14 +44,12 @@
         app:layout_constraintTop_toTopOf="@+id/buttonNumbers"
         tools:ignore="SpeakableTextPresentCheck" />
 
+
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainerView2"
-        android:name="com.example.sweprojekt.ui.qrcodescanner.QRFragment"
-        android:layout_width="337dp"
-        android:layout_height="386dp"
-        android:layout_marginBottom="88dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonNumbers"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:id="@+id/fragmentContainerHome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-10dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

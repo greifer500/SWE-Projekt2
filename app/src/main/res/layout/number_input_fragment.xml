@@ -11,7 +11,7 @@
         android:id="@+id/editNumberInput"
         android:layout_width="242dp"
         android:layout_height="89dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:hint="@string/raumnummer"
         android:importantForAutofill="no"
