@@ -1,26 +1,21 @@
-package com.example.sweprojekt.ui.dashboard;
+package com.example.sweprojekt.ui.roomlist;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.sweprojekt.R;
-import com.example.sweprojekt.databinding.FragmentDashboardBinding;
+import com.example.sweprojekt.databinding.FragmentRoomlistBinding;
 
-public class DashboardFragment extends Fragment {
-    private FragmentDashboardBinding binding;
+public class RoomListFragment extends Fragment {
+    private FragmentRoomlistBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        binding = FragmentDashboardBinding.inflate(inflater, container, false);
+        binding = FragmentRoomlistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         return root;

@@ -1,4 +1,4 @@
-package com.example.sweprojekt.ui.qrcodescanner;
+package com.example.sweprojekt.ui.numberinput;
 
 import androidx.lifecycle.ViewModelProvider;
 
@@ -14,17 +14,16 @@ import android.view.ViewGroup;
 
 import com.example.sweprojekt.R;
 
-public class QRFragment extends Fragment {
+public class NumberInputFragment extends Fragment {
 
-    public static QRFragment newInstance() {
-        return new QRFragment();
+    public static NumberInputFragment newInstance() {
+        return new NumberInputFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.q_r_fragment, container, false);
+        return inflater.inflate(R.layout.number_input_fragment, container, false);
     }
 
 }
-

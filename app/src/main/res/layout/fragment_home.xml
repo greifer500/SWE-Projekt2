@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:contentDescription="allows_to_search_after_a_room_with_a_qr_code"
+        android:contentDescription="@string/schaltet_das_fragment_um_homescreen_zu_dem_qrcode_scanner_um"
         android:minHeight="48dp"
         android:src="@drawable/ic_baseline_qr_code_scanner_24"
         app:layout_constraintEnd_toStartOf="@+id/buttonNumbers"
@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="152dp"
-        android:contentDescription="allows_to_search_after_a_room_with_manual_input"
+        android:contentDescription="@string/schaltet_das_fragment_um_homescreen_zu_manuellem_zahleninput_um"
         android:minHeight="48dp"
         android:src="@drawable/ic_baseline_123_24"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,11 +37,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:contentDescription="adds_new_room"
+        android:contentDescription="@string/ffnet_neues_fragment_um_einen_neuen_raum_anzulegen"
         android:minHeight="48dp"
         android:src="@drawable/ic_baseline_add_24"
         app:layout_constraintStart_toEndOf="@+id/buttonNumbers"
         app:layout_constraintTop_toTopOf="@+id/buttonNumbers"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="com.example.sweprojekt.ui.qrcodescanner.QRFragment"
+        android:layout_width="337dp"
+        android:layout_height="386dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonNumbers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
