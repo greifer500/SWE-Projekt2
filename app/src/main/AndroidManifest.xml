@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SWEProjekt">
         <activity
+            android:name=".ui.newbuilding.NewBuilding"
+            android:exported="false" />
+        <activity
+            android:name=".ui.showroom.ShowRoomActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.newroom.NewRoomActivity"
             android:exported="false" />
         <activity

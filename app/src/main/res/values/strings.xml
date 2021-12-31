@@ -11,5 +11,8 @@
     <string name="ffnet_neues_fragment_um_einen_neuen_raum_anzulegen">Öffnet neues Fragment um einen neuen Raum anzulegen</string>
     <string name="todo_durch_random_generierten_qrcode_ersetzen">TODO, durch Random generierten QRCode ersetzen</string>
     <string name="qr_code_generieren">QR-Code generieren</string>
-    <string name="raum_id">Raum-ID</string>
+    <string name="raum_id">RaumID</string>
+    <string name="geb_udenummer">Gebäudenummer</string>
+    <string name="anzahl_st_hle">Anzahl Stühle</string>
+    <string name="anzahl_tischplatze">Anzahl Tischplatze</string>
 </resources>
