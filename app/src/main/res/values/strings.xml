@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SWE Projekt</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_list">Raum- und Gebäudeliste</string>
     <string name="title_notifications">Notifications</string>
     <string name="tempor_rerfiller">TemporärerFiller</string>
     <string name="suche">Suche</string>
@@ -15,4 +15,6 @@
     <string name="geb_udenummer">Gebäudenummer</string>
     <string name="anzahl_st_hle">Anzahl Stühle</string>
     <string name="anzahl_tischplatze">Anzahl Tischplatze</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
