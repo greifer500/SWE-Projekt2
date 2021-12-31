@@ -14,6 +14,7 @@ import com.example.sweprojekt.R;
 import com.example.sweprojekt.databinding.FragmentListBinding;
 import com.example.sweprojekt.ui.list.buildings.BuildingsListFragment;
 import com.example.sweprojekt.ui.list.rooms.RoomsListFragment;
+import com.google.android.material.tabs.TabLayout;
 
 public class ListFragment extends Fragment {
     private FragmentListBinding binding;
@@ -32,12 +33,42 @@ public class ListFragment extends Fragment {
         if (true){
             createFragmentManagerRooms();
         }
+        TabLayout tabLayout = v.findViewById(R.id.tabLayout);
 
-        Button btnRooms = v.findViewById(R.id.buttonRooms);
-        btnRooms.setOnClickListener(v1 -> createFragmentManagerRooms());
+        tabLayout.addTab(tabLayout.newTab().setText("Räume"));
 
-        Button btnBuildings = v.findViewById(R.id.buttonBuilding);
-        btnBuildings.setOnClickListener(v1 -> createFragmentManagerBuildings());
+        tabLayout.addTab(tabLayout.newTab().setText("Gebäude"));
+
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                int position = tab.getPosition();
+                switch (tab.getPosition()){
+                    case 1:
+                        createFragmentManagerRooms();
+                        break;
+                    case 2:
+                        createFragmentManagerBuildings();
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
+//        Button btnRooms = (Button) v.findViewById(R.id.tabRooms);
+//        btnRooms.setOnClickListener(v1 -> createFragmentManagerRooms());
+//
+//        Button btnBuildings =  v.findViewById(R.id.tabBuildings);
+//        btnBuildings.setOnClickListener(v1 -> createFragmentManagerBuildings());
     }
 
     private void createFragmentManagerRooms() {
