@@ -1,4 +1,4 @@
-package com.example.sweprojekt.ui.showroom;
+package com.example.sweprojekt.ui.list.showbuilding;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.view.Window;
 
 import com.example.sweprojekt.R;
 
-public class ShowRoomActivity extends AppCompatActivity {
+public class ShowBuildingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +16,8 @@ public class ShowRoomActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
 
-        setContentView(R.layout.activity_show_room);
+        //todo diese Klasse + Layout
+
+        setContentView(R.layout.activity_show_building);
     }
 }

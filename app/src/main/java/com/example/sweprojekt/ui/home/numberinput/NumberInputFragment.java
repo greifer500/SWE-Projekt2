@@ -1,6 +1,4 @@
-package com.example.sweprojekt.ui.qrcodescanner;
-
-import androidx.lifecycle.ViewModelProvider;
+package com.example.sweprojekt.ui.home.numberinput;
 
 import android.os.Bundle;
 
@@ -14,17 +12,20 @@ import android.view.ViewGroup;
 
 import com.example.sweprojekt.R;
 
-public class QRFragment extends Fragment {
+public class NumberInputFragment extends Fragment {
 
-    public static QRFragment newInstance() {
-        return new QRFragment();
+    public static NumberInputFragment newInstance() {
+        return new NumberInputFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.q_r_fragment, container, false);
+        View root = inflater.inflate(R.layout.number_input_fragment, container, false).getRootView();
+
+        //todo dieses Fragment vervollständigen, Texteingabe mit Knopf verbinden und nach Raum suchen
+
+        return root;
     }
 
 }
-

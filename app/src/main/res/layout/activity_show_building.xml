@@ -4,4 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.roomlist.RoomListFragment"/>
+    tools:context=".ui.list.showbuilding.ShowBuildingActivity">
+
+</androidx.constraintlayout.widget.ConstraintLayout>
