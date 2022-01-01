@@ -1,4 +1,4 @@
-package com.example.sweprojekt.ui.newbuilding;
+package com.example.sweprojekt.ui.home.newroom.newbuilding;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.view.Window;
 
 import com.example.sweprojekt.R;
 
-public class NewBuilding extends AppCompatActivity {
+public class NewBuildingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +15,8 @@ public class NewBuilding extends AppCompatActivity {
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
+
+        //todo diese Activity vervollständigen + Layout
 
         setContentView(R.layout.activity_new_building);
     }

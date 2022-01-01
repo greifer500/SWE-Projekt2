@@ -10,13 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SWEProjekt">
         <activity
-            android:name=".ui.newbuilding.NewBuilding"
+            android:name=".ui.list.showbuilding.ShowBuildingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.showroom.ShowRoomActivity"
+            android:name=".ui.home.newroom.newbuilding.NewBuildingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.newroom.NewRoomActivity"
+            android:name=".ui.list.showroom.ShowRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.newroom.NewRoomActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

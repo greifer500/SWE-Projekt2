@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -34,20 +33,15 @@ public class ListFragment extends Fragment {
             createFragmentManagerRooms();
         }
         TabLayout tabLayout = v.findViewById(R.id.tabLayout);
-
-        tabLayout.addTab(tabLayout.newTab().setText("Räume"));
-
-        tabLayout.addTab(tabLayout.newTab().setText("Gebäude"));
-
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int position = tab.getPosition();
                 switch (tab.getPosition()){
-                    case 1:
+                    case 0:
                         createFragmentManagerRooms();
                         break;
-                    case 2:
+                    case 1:
                         createFragmentManagerBuildings();
                         break;
                 }
@@ -63,12 +57,6 @@ public class ListFragment extends Fragment {
 
             }
         });
-
-//        Button btnRooms = (Button) v.findViewById(R.id.tabRooms);
-//        btnRooms.setOnClickListener(v1 -> createFragmentManagerRooms());
-//
-//        Button btnBuildings =  v.findViewById(R.id.tabBuildings);
-//        btnBuildings.setOnClickListener(v1 -> createFragmentManagerBuildings());
     }
 
     private void createFragmentManagerRooms() {

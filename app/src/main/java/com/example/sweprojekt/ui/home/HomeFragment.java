@@ -13,9 +13,9 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.sweprojekt.R;
 import com.example.sweprojekt.databinding.FragmentHomeBinding;
-import com.example.sweprojekt.ui.newroom.NewRoomActivity;
-import com.example.sweprojekt.ui.numberinput.NumberInputFragment;
-import com.example.sweprojekt.ui.qrcodescanner.QRFragment;
+import com.example.sweprojekt.ui.home.newroom.NewRoomActivity;
+import com.example.sweprojekt.ui.home.numberinput.NumberInputFragment;
+import com.example.sweprojekt.ui.home.qrcodescanner.QRFragment;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
         btnNbrs.setOnClickListener(v12 -> createFragmentManagerNumbers());
 
         ImageButton btnNewR = v.findViewById(R.id.buttonNewRoom);
-        btnNewR.setOnClickListener(v13 -> createFragmentManagerNewRoom());
+        btnNewR.setOnClickListener(v13 -> goToActivityNewRoom());
     }
 
     public void createFragmentManagerQRSC(){
@@ -63,7 +63,7 @@ public class HomeFragment extends Fragment {
                 .commit();
     }
 
-    public void createFragmentManagerNewRoom(){
+    public void goToActivityNewRoom(){
         Intent intent = new Intent(getActivity(), NewRoomActivity.class);
         startActivity(intent);
     }
