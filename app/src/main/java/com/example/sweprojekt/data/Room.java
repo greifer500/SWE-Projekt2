@@ -11,6 +11,7 @@ foreignKeys = {@ForeignKey(entity = Building.class,
         childColumns = "building_id",
         onDelete = ForeignKey.SET_NULL)})
 public class Room {
+
     @PrimaryKey(autoGenerate = true)
     public Integer id;
 

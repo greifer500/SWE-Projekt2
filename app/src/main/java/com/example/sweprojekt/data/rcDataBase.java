@@ -6,9 +6,16 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {Attribute.class,Building.class,ErrorType.class, Log.class, LogAttribute.class, com.example.sweprojekt.data.Room.class, RoomAttribute.class, User.class}, version = 1, exportSchema = false)
 public abstract class rcDataBase extends RoomDatabase {
+    public abstract AttributeDao attributeDao();
+    public abstract BuildingDao buildingDao();
+    public abstract ErrorTypeDao errorTypeDao();
+    public abstract LogAttributeDao logAttributeDao();
+    public abstract LogDao logDao();
+    public abstract RoomDao roomDao();
     public abstract UserDao userDoa();
+
 
 
     private static final String DB_NAME = "rcDataBase.db";
