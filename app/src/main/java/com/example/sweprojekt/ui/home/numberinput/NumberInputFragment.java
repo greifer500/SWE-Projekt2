@@ -25,7 +25,14 @@ public class NumberInputFragment extends Fragment {
 
         //todo dieses Fragment vervollständigen, Texteingabe mit Knopf verbinden und nach Raum suchen
 
+        createButtonsAndTextInput();
+
         return root;
     }
+
+    private void createButtonsAndTextInput() {
+
+    }
+
 
 }
