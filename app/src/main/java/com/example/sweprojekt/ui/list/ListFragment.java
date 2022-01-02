@@ -23,12 +23,12 @@ public class ListFragment extends Fragment {
         binding = FragmentListBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        createButtonsList(root);
+        createLayoutList(root);
 
         return root;
     }
 
-    private void createButtonsList(View v) {
+    private void createLayoutList(View v) {
         if (true){
             createFragmentManagerRooms();
         }

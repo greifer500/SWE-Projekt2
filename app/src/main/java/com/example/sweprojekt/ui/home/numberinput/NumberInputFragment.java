@@ -9,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.sweprojekt.R;
 
@@ -23,15 +26,26 @@ public class NumberInputFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.number_input_fragment, container, false).getRootView();
 
-        //todo dieses Fragment vervollständigen, Texteingabe mit Knopf verbinden und nach Raum suchen
+        //todo dieses Fragment vervollständigen, nach Raum suchen muss implementiert werden
 
-        createButtonsAndTextInput();
+        createLayoutNumInput(root);
 
         return root;
     }
 
-    private void createButtonsAndTextInput() {
-
+    private void createLayoutNumInput(View v) {
+        EditText editNumberInput = v.findViewById(R.id.editNumberInput);
+        Button btnNumberSearch = v.findViewById(R.id.buttonNumberSearch);
+        btnNumberSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String str = editNumberInput.getText().toString();
+                Toast.makeText(getActivity(), str, Toast.LENGTH_SHORT).show();
+                if (false){
+                    //todo soll hier nach dem Raum suchen
+                }
+            }
+        });
     }
 
 

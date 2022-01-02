@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SWE Projekt</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Eingabe</string>
     <string name="title_list">Raum- und Gebäudeliste</string>
     <string name="title_notifications">Notifications</string>
     <string name="tempor_rerfiller">TemporärerFiller</string>
