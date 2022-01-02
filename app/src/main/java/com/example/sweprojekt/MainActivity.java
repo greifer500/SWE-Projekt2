@@ -1,16 +1,21 @@
 package com.example.sweprojekt;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.sweprojekt.ui.home.HomeFragment;
+import com.example.sweprojekt.ui.home.qrcodescanner.CameraActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.ListFragment;
@@ -44,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
     public void addItemBuildings(String s){ arrayListBuildings.add(s); }
     public void deleteItemBuildings(int position){ arrayListBuildings.remove(position); }
 
+    private static final String[] CAMERA_PERMISSION = new String[]{Manifest.permission.CAMERA};
+    private static final int CAMERA_REQUEST_CODE = 10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,8 +78,15 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
+
+        CallCamera();
+
         aradRooms = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListRooms);
         aradBuildings = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
+
+    }
+
+    private void CallCamera() {
     }
 
     public static MainActivity getInstance(){
@@ -98,4 +112,29 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
+    public void callCamera(){
+        if (hasCameraPermission()) {
+            enableCamera();
+        } else {
+            requestPermission();
+        }
+    }
+    private boolean hasCameraPermission() {
+        return ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED;
+    }
+    private void requestPermission() {
+        ActivityCompat.requestPermissions(
+                this,
+                CAMERA_PERMISSION,
+                CAMERA_REQUEST_CODE
+        );
+    }
+    private void enableCamera() {
+        Intent intent = new Intent(this, CameraActivity.class);
+        startActivity(intent);
+    }
+
 }

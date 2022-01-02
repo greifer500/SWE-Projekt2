@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.sweprojekt.MainActivity;
 import com.example.sweprojekt.R;
 
 public class QRFragment extends Fragment {
@@ -25,6 +26,8 @@ public class QRFragment extends Fragment {
 
         //todo oh boy i dont know where to start, Martin, Franz und Erik, das hier ist euer Problem XD, welches ihr mit Yannik absprechen müsst,
         // was das Layout betrifft, keine Ahnung was ihr benutzen müsst, vlt ein container?
+        MainActivity mainActivity = (MainActivity) getActivity();
+        mainActivity.callCamera();
 
         return root;
     }
