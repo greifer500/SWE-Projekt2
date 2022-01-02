@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,10 +38,16 @@ public class NewRoomActivity extends AppCompatActivity{
     }
 
     private void createLayoutNewRoom(MainActivity mainActivity){
+        EditText eTRoomNumber = findViewById(R.id.editTextRoomNumber);
+        EditText eTBuildingNumb = findViewById(R.id.editTextBuildingNumber);
+
+
         Button btnRandQRCode = findViewById(R.id.buttonRandQRCode);
         btnRandQRCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String rn = eTRoomNumber.getText().toString().trim();
+                String bn = eTBuildingNumb.getText().toString().trim();
                 //todo Random QRCode hier rein
             }
         });
@@ -67,10 +74,6 @@ public class NewRoomActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-    }
-
-    private void createTextInputNewRoom(MainActivity mainActivity){
-        //todo den Rest von NewRoom implementieren, initialiseren
     }
 
     private class Room {

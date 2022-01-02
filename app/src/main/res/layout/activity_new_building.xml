@@ -7,13 +7,14 @@
     tools:context=".ui.home.newroom.newbuilding.NewBuildingActivity">
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTextNewBuildingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
         android:ems="10"
         android:hint="Gebäudenummer"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,32 +23,32 @@
     <EditText
         android:id="@+id/editTextNewDescriptionBuildings"
         android:layout_width="184dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="8dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:hint="Beschreibung"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNewBuildingName" />
 
     <CheckBox
         android:id="@+id/checkBoxDescriptionBuildings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNewBuildingName" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonCreateNewBuilding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="58dp"
         android:layout_marginEnd="33dp"
-        android:text="Button"
+        android:text="Erstellen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNewDescriptionBuildings" />
 
