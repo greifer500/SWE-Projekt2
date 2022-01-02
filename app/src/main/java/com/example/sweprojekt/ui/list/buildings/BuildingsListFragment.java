@@ -2,6 +2,7 @@ package com.example.sweprojekt.ui.list.buildings;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.sweprojekt.MainActivity;
 import com.example.sweprojekt.R;
+import com.example.sweprojekt.ui.list.showbuilding.ShowBuildingActivity;
 
 public class BuildingsListFragment extends Fragment {
 
@@ -30,16 +32,11 @@ public class BuildingsListFragment extends Fragment {
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.setAdapterBuildings(lv);
         //todo Öffnen vom Gebäude mit spezifischer Information (wahrscheinlich in einer Activity mit einem Fragment)
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                mainActivity.deleteItemBuildings(position);
-                ((ArrayAdapter<String>) lv.getAdapter()).notifyDataSetChanged();
-
-                Toast toast = Toast.makeText(getActivity().getApplicationContext(),"YEET", Toast.LENGTH_SHORT);
-                toast.show();
-
-                return true;
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ShowBuildingActivity.class);
+                startActivity(intent);
             }
         });
 
