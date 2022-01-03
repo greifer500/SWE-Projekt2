@@ -9,18 +9,30 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.sweprojekt.MainActivity;
 import com.example.sweprojekt.R;
+import com.example.sweprojekt.data.Room;
+import com.example.sweprojekt.data.rcDataBase;
 
 public class ShowRoomActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
 
         setContentView(R.layout.activity_show_room);
+
+        MainActivity mainActivity = MainActivity.getInstance();
+
+        String roomName = getIntent().getExtras().getString("roomName");
+        String[] roomSplit = roomName.split("(?<=\\D)(?=\\d)");
+        rcDataBase db = rcDataBase.getInstance(mainActivity);
+        Room room = db.roomDao().getRoomByName(roomSplit[0], Integer.getInteger(roomSplit[1]));
+
 
         EditText eTVRM = findViewById(R.id.editTextViewRoomNumber);
         eTVRM.setText("");

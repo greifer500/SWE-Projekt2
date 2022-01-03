@@ -25,7 +25,7 @@ public class BuildingsListFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,  ViewGroup container,
-                              Bundle savedInstanceState) {
+                             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.buildings_list_fragment, container, false).getRootView();
 
         ListView lv = root.findViewById(R.id.ListBuildings);
@@ -37,6 +37,8 @@ public class BuildingsListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ShowBuildingActivity.class);
+                String roomName = parent.getItemAtPosition(position).toString();
+                intent.putExtra("roomName", roomName);
                 startActivity(intent);
             }
         });
