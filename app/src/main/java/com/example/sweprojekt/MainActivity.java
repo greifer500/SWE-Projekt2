@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     //Kann und WIRD wahrscheinlich Memoryleaks verursachen
     private static MainActivity mainActivityInstance;
 
+
     private ActivityMainBinding binding;
 
     private ArrayList<String> arrayListRooms = new ArrayList<>();
@@ -60,6 +61,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //todo hier werden todo's aufgelistet für Klassen, die noch nicht erstellt wurden: LogIn
+        // schreibt mir wenn ich noch was vergessen habe
 
         mainActivityInstance = this;
 
