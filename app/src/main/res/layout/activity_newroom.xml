@@ -27,19 +27,6 @@
             app:titleTextColor="@color/white" />
 
         <EditText
-            android:id="@+id/editTextBuildingNumber"
-            android:layout_width="302dp"
-            android:layout_height="48dp"
-            android:ems="10"
-            android:hint="@string/geb_udenummer"
-            android:importantForAutofill="no"
-            android:inputType="numberSigned"
-            app:layout_constraintEnd_toEndOf="@+id/editTextRoomNumber"
-            app:layout_constraintStart_toStartOf="@+id/editTextRoomNumber"
-            app:layout_constraintTop_toBottomOf="@+id/editTextRoomNumber"
-            tools:ignore="TextContrastCheck" />
-
-        <EditText
             android:id="@+id/editTextRoomNumber"
             android:layout_width="302dp"
             android:layout_height="48dp"
@@ -85,14 +72,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="36dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="64dp"
             android:ems="10"
             android:hint="@string/anzahl_st_hle"
             android:importantForAutofill="no"
             android:inputType="numberSigned"
             android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="@+id/editTextBuildingNumber"
-            app:layout_constraintTop_toBottomOf="@+id/editTextBuildingNumber"
+            app:layout_constraintStart_toStartOf="@+id/spinner"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRoomNumber"
             tools:ignore="TextContrastCheck" />
 
         <EditText
@@ -148,6 +135,19 @@
             app:layout_constraintStart_toStartOf="@+id/checkBox4"
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
             app:layout_constraintVertical_bias="0.842" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginEnd="54dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextQuantityChairs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRoomNumber"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="SpeakableTextPresentCheck" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

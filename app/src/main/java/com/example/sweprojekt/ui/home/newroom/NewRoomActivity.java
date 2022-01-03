@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,7 +41,27 @@ public class NewRoomActivity extends AppCompatActivity{
 
     private void createLayoutNewRoom(MainActivity mainActivity){
         EditText eTRoomNumber = findViewById(R.id.editTextRoomNumber);
-        EditText eTBuildingNumb = findViewById(R.id.editTextBuildingNumber);
+
+        Spinner spinner = findViewById(R.id.spinner);
+        spinner.setAdapter(mainActivity.getAradBuildings());
+
+        EditText eTRoomChairs = findViewById(R.id.editTextQuantityChairs);
+        eTRoomChairs.setEnabled(false);
+
+        EditText eTRoomSeats = findViewById(R.id.editTextQuantitySeats);
+
+        CheckBox cB2 = findViewById(R.id.checkBox2);
+        cB2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cB2.isChecked()){
+                    eTRoomChairs.setEnabled(true);
+                }else {
+                    eTRoomChairs.setText("");
+                    eTRoomChairs.setEnabled(false);
+                }
+            }
+        });
 
         Button btnCreateRoom = findViewById(R.id.buttonCreateRoom);
         btnCreateRoom.setOnClickListener(new View.OnClickListener() {
