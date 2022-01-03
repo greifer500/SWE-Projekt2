@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
+    private String Roomstring;
+
     private ArrayList<String> arrayListRooms = new ArrayList<>();
     private ArrayAdapter<String> aradRooms;
 
@@ -94,8 +96,8 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        aradRooms = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListRooms);
-        aradBuildings = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
+        aradRooms = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListRooms);
+        aradBuildings = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
         loadItemBuilding();
         loadItemRoom();
 
@@ -129,21 +131,19 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (intentResult.getContents()!= null){
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Result");
-            builder.setMessage(intentResult.getContents());
-            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
-            builder.show();
+            setIntentResult(intentResult.getContents());
         } else {
             Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
 
+    private void setIntentResult(String string){
+        Roomstring = string;
+    }
+
+    public String getIntentResult(){
+        return Roomstring;
+    }
 
     public ArrayAdapter<String> getAradBuildings() {
         return aradBuildings;
