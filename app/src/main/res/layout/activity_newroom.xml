@@ -15,6 +15,17 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonCreateRoom"
         tools:context=".ui.home.newroom.NewRoomActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Raum erstellen"
+            app:titleTextColor="@color/white" />
+
         <EditText
             android:id="@+id/editTextBuildingNumber"
             android:layout_width="302dp"
@@ -33,16 +44,16 @@
             android:layout_width="302dp"
             android:layout_height="48dp"
             android:layout_marginStart="54dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="54dp"
             android:ems="10"
             android:hint="@string/raum_id"
             android:importantForAutofill="no"
             android:inputType="numberSigned"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar1" />
 
         <CheckBox
             android:id="@+id/checkBox2"
@@ -115,23 +126,28 @@
             android:id="@+id/buttonCreateRoom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="184dp"
-            android:layout_marginTop="16dp"
-            android:text="Erstellen"
+            android:layout_marginEnd="24dp"
+            android:text="Raum Erstellen"
+            app:layout_constraintBottom_toTopOf="@+id/buttonTemp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.111"
-            app:layout_constraintStart_toEndOf="@+id/checkBox4"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/checkBox4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+            app:layout_constraintVertical_bias="1.0" />
 
         <Button
             android:id="@+id/buttonTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginBottom="364dp"
-            android:text="GoToNewBuilding"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="308dp"
+            android:text="Neues Gebäude erstellen"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/checkBox4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+            app:layout_constraintVertical_bias="0.842" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

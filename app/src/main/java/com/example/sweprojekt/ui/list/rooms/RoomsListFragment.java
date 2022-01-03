@@ -31,7 +31,6 @@ public class RoomsListFragment extends Fragment {
         ListView lv = root.findViewById(R.id.ListRooms);
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.setAdapterRooms(lv);
-        //todo Öffnen vom Raum mit spezifischer Information
 
         //todo vielleicht mehr Icons für die Räume geben wie zb Stuhl-Icon + Zahl ect
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {

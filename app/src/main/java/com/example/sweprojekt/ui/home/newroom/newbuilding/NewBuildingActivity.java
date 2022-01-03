@@ -38,15 +38,6 @@ public class NewBuildingActivity extends AppCompatActivity {
 
         EditText eTNewBuildingName = findViewById(R.id.editTextNewBuildingName);
 
-        CheckBox cBDescriptionBuilding = findViewById(R.id.checkBoxDescriptionBuildings);
-        eTNewDescriptionBuildings.setEnabled(false);
-        cBDescriptionBuilding.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                eTNewDescriptionBuildings.setEnabled(((CheckBox) v).isChecked());
-            }
-        });
-
         Button btnCreateNewBuilding = findViewById(R.id.buttonCreateNewBuilding);
         btnCreateNewBuilding.setOnClickListener(new View.OnClickListener() {
             @Override

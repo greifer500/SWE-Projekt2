@@ -33,10 +33,6 @@ public class HomeFragment extends Fragment {
     }
 
     public void createLayoutHome(View v){
-        if (true){
-            createFragmentManagerQRSC();
-        }
-
         ImageButton btnQRCS = v.findViewById(R.id.buttonQRCS);
         btnQRCS.setOnClickListener(v1 -> createFragmentManagerQRSC());
 
