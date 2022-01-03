@@ -12,6 +12,10 @@ import android.widget.Toast;
 
 import com.example.sweprojekt.MainActivity;
 import com.example.sweprojekt.R;
+import com.example.sweprojekt.data.Building;
+import com.example.sweprojekt.data.rcDataBase;
+
+import java.util.List;
 
 public class NewBuildingActivity extends AppCompatActivity {
 
@@ -49,9 +53,19 @@ public class NewBuildingActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //todo testcode
                 //todo check ob Gebäudenummer nicht leer/vergeben ist
-                for (int i = 0; i < 20; i++){
-                    mainActivity.addItemBuildings("Test");
-                }
+                EditText etBuildingPrefix = findViewById(R.id.editTextNewBuildingName);
+                EditText etBuildingName = findViewById(R.id.editTextNewDescriptionBuildings);
+                String buildingPrefix = etBuildingPrefix.getText().toString();
+                String buildingName = etBuildingName.getText().toString();
+
+                rcDataBase db = rcDataBase.getInstance(mainActivity);
+                Building building = new Building();
+                building.buildingPrefix = buildingPrefix;
+                building.description = buildingName;
+                db.buildingDao().insertAll(building);
+                mainActivity.loadItemBuilding();
+
+
 
                 Toast toast = Toast.makeText(mainActivity,"Eintrag Erstellt", Toast.LENGTH_SHORT);
                 toast.show();

@@ -35,6 +35,6 @@ public abstract class rcDataBase extends RoomDatabase {
         return Room.databaseBuilder(
                 context,
                 rcDataBase.class,
-                DB_NAME).build();
+                DB_NAME).allowMainThreadQueries().build();
     }
 }
