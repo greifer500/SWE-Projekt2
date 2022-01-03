@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -37,9 +38,43 @@ public class NewRoomActivity extends AppCompatActivity{
         Room newRoom = new Room(5, 5);
     }
 
+
     private void createLayoutNewRoom(MainActivity mainActivity){
         EditText eTRoomNumber = findViewById(R.id.editTextRoomNumber);
         EditText eTBuildingNumb = findViewById(R.id.editTextBuildingNumber);
+
+        EditText eTRoomChairs = findViewById(R.id.editTextQuantityChairs);
+        EditText eTRoomSeats =  findViewById(R.id.editTextQuantitySeats);
+
+        eTRoomChairs.setEnabled(false);
+        eTRoomSeats.setEnabled(false);
+
+        CheckBox cBChairs= findViewById(R.id.checkBoxChairs);
+        CheckBox cBSeats= findViewById(R.id.checkBoxSeat);
+
+        cBChairs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cBChairs.isChecked()){
+                    eTRoomChairs.setEnabled(true);
+                }else {
+                    eTRoomChairs.setText("");
+                    eTRoomChairs.setEnabled(false);
+                }
+            }
+        });
+
+        cBSeats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cBSeats.isChecked()){
+                    eTRoomSeats.setEnabled(true);
+                }else {
+                    eTRoomSeats.setText("");
+                    eTRoomSeats.setEnabled(false);
+                }
+            }
+        });
 
         Button btnCreateRoom = findViewById(R.id.buttonCreateRoom);
         btnCreateRoom.setOnClickListener(new View.OnClickListener() {

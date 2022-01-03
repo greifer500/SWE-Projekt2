@@ -56,7 +56,7 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar1" />
 
         <CheckBox
-            android:id="@+id/checkBox2"
+            android:id="@+id/checkBoxChairs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/editTextQuantityChairs"
@@ -64,7 +64,7 @@
             app:layout_constraintTop_toTopOf="@+id/editTextQuantityChairs" />
 
         <CheckBox
-            android:id="@+id/checkBox3"
+            android:id="@+id/checkBoxSeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/editTextQuantitySeats"
@@ -72,7 +72,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs" />
 
         <CheckBox
-            android:id="@+id/checkBox4"
+            android:id="@+id/checkBoxChangeFaults"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
