@@ -1,6 +1,7 @@
 package com.example.sweprojekt.ui.list.showroom;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.view.Window;
@@ -16,8 +17,8 @@ public class ShowRoomActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
 
-        //todo diese Klasse + Layout
-
         setContentView(R.layout.activity_show_room);
+
+        //todo diese Klasse + Layout
     }
 }

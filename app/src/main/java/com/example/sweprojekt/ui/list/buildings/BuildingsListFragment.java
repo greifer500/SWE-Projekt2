@@ -31,6 +31,7 @@ public class BuildingsListFragment extends Fragment {
         ListView lv = root.findViewById(R.id.ListBuildings);
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.setAdapterBuildings(lv);
+
         //todo Öffnen vom Gebäude mit spezifischer Information (wahrscheinlich in einer Activity mit einem Fragment)
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

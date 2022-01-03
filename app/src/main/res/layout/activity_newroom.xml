@@ -6,147 +6,150 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/frameLayout3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.home.newroom.NewRoomActivity">
 
-    <EditText
-        android:id="@+id/editTextBuildingNumber"
-        android:layout_width="302dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:hint="@string/geb_udenummer"
-        android:importantForAutofill="no"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="@+id/editTextRoomNumber"
-        app:layout_constraintStart_toStartOf="@+id/editTextRoomNumber"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRoomNumber"
-        tools:ignore="TextContrastCheck" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="293dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="54dp"
-        android:contentDescription="@string/todo_durch_random_generierten_qrcode_ersetzen"
-        android:src="@drawable/ic_baseline_qr_code_scanner_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/editTextRoomNumber"
-        android:layout_width="302dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="54dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="54dp"
-        android:ems="10"
-        android:hint="@string/raum_id"
-        android:importantForAutofill="no"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRandQRCode" />
-
-    <Button
-        android:id="@+id/buttonRandQRCode"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="@string/qr_code_generieren"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        tools:ignore="UsingOnClickInXml" />
+        app:layout_constraintBottom_toBottomOf="@+id/buttonCreateRoom"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCreateRoom"
+        tools:context=".ui.home.newroom.NewRoomActivity">
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextQuantityChairs"
-        app:layout_constraintEnd_toStartOf="@+id/editTextQuantityChairs"
-        app:layout_constraintTop_toTopOf="@+id/editTextQuantityChairs" />
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:title="Raum erstellen"
+            app:titleTextColor="@color/white" />
 
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextQuantitySeats"
-        app:layout_constraintEnd_toStartOf="@+id/editTextQuantitySeats"
-        app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs" />
+        <EditText
+            android:id="@+id/editTextBuildingNumber"
+            android:layout_width="302dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="@string/geb_udenummer"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned"
+            app:layout_constraintEnd_toEndOf="@+id/editTextRoomNumber"
+            app:layout_constraintStart_toStartOf="@+id/editTextRoomNumber"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRoomNumber"
+            tools:ignore="TextContrastCheck" />
 
-    <CheckBox
-        android:id="@+id/checkBox4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
-        app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
-        app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
-        app:layout_constraintVertical_bias="0.0" />
+        <EditText
+            android:id="@+id/editTextRoomNumber"
+            android:layout_width="302dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="54dp"
+            android:ems="10"
+            android:hint="@string/raum_id"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar1" />
 
-    <EditText
-        android:id="@+id/editTextQuantityChairs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/anzahl_st_hle"
-        android:inputType="numberSigned"
-        android:minHeight="48dp"
-        app:layout_constraintStart_toStartOf="@+id/editTextBuildingNumber"
-        app:layout_constraintTop_toBottomOf="@+id/editTextBuildingNumber"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <CheckBox
+            android:id="@+id/checkBox2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextQuantityChairs"
+            app:layout_constraintEnd_toStartOf="@+id/editTextQuantityChairs"
+            app:layout_constraintTop_toTopOf="@+id/editTextQuantityChairs" />
 
-    <EditText
-        android:id="@+id/editTextQuantitySeats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:hint="@string/anzahl_tischplatze"
-        android:inputType="numberSigned"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextQuantityChairs"
-        app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <CheckBox
+            android:id="@+id/checkBox3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintEnd_toStartOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="TODO FAULTS"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/editTextQuantitySeats"
-        app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
-        tools:ignore="TextContrastCheck"
-        android:importantForAutofill="no" />
+        <CheckBox
+            android:id="@+id/checkBox4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
+            app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintVertical_bias="0.0" />
 
-    <Button
-        android:id="@+id/buttonCreateRoom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
-        android:layout_marginTop="16dp"
-        android:text="Erstellen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toEndOf="@+id/checkBox4"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5" />
+        <EditText
+            android:id="@+id/editTextQuantityChairs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="@string/anzahl_st_hle"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            app:layout_constraintStart_toStartOf="@+id/editTextBuildingNumber"
+            app:layout_constraintTop_toBottomOf="@+id/editTextBuildingNumber"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/editTextQuantitySeats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:ems="10"
+            android:hint="@string/anzahl_tischplatze"
+            android:importantForAutofill="no"
+            android:inputType="numberSigned"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextQuantityChairs"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="TODO FAULTS"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            app:layout_constraintEnd_toEndOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/buttonCreateRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="Raum Erstellen"
+            app:layout_constraintBottom_toTopOf="@+id/buttonTemp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/checkBox4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/buttonTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="308dp"
+            android:text="Neues Gebäude erstellen"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/checkBox4"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName5"
+            app:layout_constraintVertical_bias="0.842" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
