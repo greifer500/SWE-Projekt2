@@ -39,6 +39,5 @@ public class QRFragment extends Fragment {
 
         return inflater.inflate(R.layout.q_r_fragment, container, false).getRootView();
     }
-
 }
 

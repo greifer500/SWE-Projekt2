@@ -19,6 +19,5 @@ public class ShowRoomActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_room);
 
         //todo diese Klasse + Layout
-
     }
 }
