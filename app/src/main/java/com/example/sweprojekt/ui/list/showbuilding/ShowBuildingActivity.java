@@ -16,8 +16,9 @@ public class ShowBuildingActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
 
+        setContentView(R.layout.activity_show_building);
+
         //todo diese Klasse + Layout
 
-        setContentView(R.layout.activity_show_building);
     }
 }

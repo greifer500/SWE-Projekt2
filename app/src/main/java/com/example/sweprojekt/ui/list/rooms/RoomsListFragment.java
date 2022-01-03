@@ -2,6 +2,7 @@ package com.example.sweprojekt.ui.list.rooms;
 
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.sweprojekt.MainActivity;
 import com.example.sweprojekt.R;
+import com.example.sweprojekt.ui.list.showroom.ShowRoomActivity;
 
 public class RoomsListFragment extends Fragment {
 
@@ -29,20 +31,14 @@ public class RoomsListFragment extends Fragment {
         ListView lv = root.findViewById(R.id.ListRooms);
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.setAdapterRooms(lv);
-        //todo Öffnen vom Raum mit spezifischer Information (wahrscheinlich in einer Activity die als Host für 2 Fragmente gilt,
-        // diese sollten sein: Raum-Infos und Logger)
+        //todo Öffnen vom Raum mit spezifischer Information
 
         //todo vielleicht mehr Icons für die Räume geben wie zb Stuhl-Icon + Zahl ect
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                mainActivity.deleteItemRooms(position);
-                ((ArrayAdapter<String>) lv.getAdapter()).notifyDataSetChanged();
-
-                Toast toast = Toast.makeText(getActivity().getApplicationContext(),"YEET", Toast.LENGTH_SHORT);
-                toast.show();
-
-                return true;
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(getActivity(), ShowRoomActivity.class);
+                startActivity(intent);
             }
         });
 

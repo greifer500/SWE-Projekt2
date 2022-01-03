@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.sweprojekt">
+    
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -11,15 +13,19 @@
         android:theme="@style/Theme.SWEProjekt">
         <activity
             android:name=".ui.list.showbuilding.ShowBuildingActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.newroom.newbuilding.NewBuildingActivity"
+            android:parentActivityName=".ui.home.newroom.NewRoomActivity"
             android:exported="false" />
         <activity
             android:name=".ui.list.showroom.ShowRoomActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.newroom.NewRoomActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -31,6 +37,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ui.home.qrcodescanner.Capture"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"/>
     </application>
 
 </manifest>

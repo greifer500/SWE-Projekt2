@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -14,6 +15,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.sweprojekt.R;
 import com.example.sweprojekt.databinding.FragmentHomeBinding;
 import com.example.sweprojekt.ui.home.newroom.NewRoomActivity;
+import com.example.sweprojekt.ui.home.newroom.newbuilding.NewBuildingActivity;
 import com.example.sweprojekt.ui.home.numberinput.NumberInputFragment;
 import com.example.sweprojekt.ui.home.qrcodescanner.QRFragment;
 
@@ -25,12 +27,12 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        createButtonsHome(root);
+        createLayoutHome(root);
 
         return root;
     }
 
-    public void createButtonsHome(View v){
+    public void createLayoutHome(View v){
         if (true){
             createFragmentManagerQRSC();
         }

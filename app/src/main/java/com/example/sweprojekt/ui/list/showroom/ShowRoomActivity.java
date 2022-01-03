@@ -16,8 +16,9 @@ public class ShowRoomActivity extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
 
+        setContentView(R.layout.activity_show_room);
+
         //todo diese Klasse + Layout
 
-        setContentView(R.layout.activity_show_room);
     }
 }

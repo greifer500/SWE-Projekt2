@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">SWE Projekt</string>
-    <string name="title_home">Home</string>
+    <string name="title_home">Eingabe</string>
     <string name="title_list">Raum- und Gebäudeliste</string>
     <string name="title_notifications">Notifications</string>
     <string name="tempor_rerfiller">TemporärerFiller</string>
@@ -10,7 +10,7 @@
     <string name="schaltet_das_fragment_um_homescreen_zu_manuellem_zahleninput_um">Schaltet das Fragment um HomeScreen zu manuellem Zahleninput um</string>
     <string name="ffnet_neues_fragment_um_einen_neuen_raum_anzulegen">Öffnet neues Fragment um einen neuen Raum anzulegen</string>
     <string name="todo_durch_random_generierten_qrcode_ersetzen">TODO, durch Random generierten QRCode ersetzen</string>
-    <string name="qr_code_generieren">QR-Code generieren</string>
+    <string name="qr_code_preview">QR-Code preview</string>
     <string name="raum_id">RaumID</string>
     <string name="geb_udenummer">Gebäudenummer</string>
     <string name="anzahl_st_hle">Anzahl Stühle</string>
