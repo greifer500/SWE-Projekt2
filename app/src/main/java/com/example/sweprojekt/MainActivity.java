@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ArrayList<String> arrayListBuildings = new ArrayList<>();
     private ArrayAdapter<String> aradBuildings;
-
     public void setAdapterBuildings(ListView lv){ lv.setAdapter(aradBuildings); }
     public void loadItemBuilding(){
         rcDataBase db = rcDataBase.getInstance(getApplicationContext());
@@ -84,6 +83,8 @@ public class MainActivity extends AppCompatActivity {
 
         aradRooms = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListRooms);
         aradBuildings = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
+        loadItemBuilding();
+
     }
 
     public static MainActivity getInstance(){
