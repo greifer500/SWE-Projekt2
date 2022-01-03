@@ -129,4 +129,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
+
+
+    public ArrayAdapter<String> getAradBuildings() {
+        return aradBuildings;
+    }
 }
