@@ -145,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
     public ArrayAdapter<String> getAradBuildings() {
         return aradBuildings;
     }

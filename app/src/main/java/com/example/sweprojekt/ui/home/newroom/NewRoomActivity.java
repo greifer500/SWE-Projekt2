@@ -38,8 +38,6 @@ public class NewRoomActivity extends AppCompatActivity{
         // QRCode Generator hinzufügen, Knöpfe anpassen(da diese grade nur paar Sachen testen), Room-Klasse vervollständigen/verbessern
 
         createLayoutNewRoom(mainActivity);
-
-        Room newRoom = new Room(5, 5);
     }
 
 
