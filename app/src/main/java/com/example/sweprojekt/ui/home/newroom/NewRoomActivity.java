@@ -47,24 +47,6 @@ public class NewRoomActivity extends AppCompatActivity{
         spinner.setAdapter(mainActivity.getAradBuildings());
 
         EditText eTRoomChairs = findViewById(R.id.editTextQuantityChairs);
-        eTRoomChairs.setEnabled(false);
-
-        EditText eTRoomSeats = findViewById(R.id.editTextQuantitySeats);
-
-        CheckBox cB2 = findViewById(R.id.checkBox2);
-        cB2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (cB2.isChecked()){
-                    eTRoomChairs.setEnabled(true);
-                }else {
-                    eTRoomChairs.setText("");
-                    eTRoomChairs.setEnabled(false);
-                }
-            }
-        });
-
-        EditText eTRoomChairs = findViewById(R.id.editTextQuantityChairs);
         EditText eTRoomSeats =  findViewById(R.id.editTextQuantitySeats);
 
         eTRoomChairs.setEnabled(false);
