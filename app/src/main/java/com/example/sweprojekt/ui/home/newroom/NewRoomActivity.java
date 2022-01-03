@@ -39,6 +39,7 @@ public class NewRoomActivity extends AppCompatActivity{
         Room newRoom = new Room(5, 5);
     }
 
+
     private void createLayoutNewRoom(MainActivity mainActivity){
         EditText eTRoomNumber = findViewById(R.id.editTextRoomNumber);
 
@@ -59,6 +60,39 @@ public class NewRoomActivity extends AppCompatActivity{
                 }else {
                     eTRoomChairs.setText("");
                     eTRoomChairs.setEnabled(false);
+                }
+            }
+        });
+
+        EditText eTRoomChairs = findViewById(R.id.editTextQuantityChairs);
+        EditText eTRoomSeats =  findViewById(R.id.editTextQuantitySeats);
+
+        eTRoomChairs.setEnabled(false);
+        eTRoomSeats.setEnabled(false);
+
+        CheckBox cBChairs= findViewById(R.id.checkBoxChairs);
+        CheckBox cBSeats= findViewById(R.id.checkBoxSeat);
+
+        cBChairs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cBChairs.isChecked()){
+                    eTRoomChairs.setEnabled(true);
+                }else {
+                    eTRoomChairs.setText("");
+                    eTRoomChairs.setEnabled(false);
+                }
+            }
+        });
+
+        cBSeats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cBSeats.isChecked()){
+                    eTRoomSeats.setEnabled(true);
+                }else {
+                    eTRoomSeats.setText("");
+                    eTRoomSeats.setEnabled(false);
                 }
             }
         });
