@@ -6,11 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.newroom.newbuilding.NewBuildingActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/purple_700"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Gebäude erstellen"
+        app:titleTextColor="@color/white" />
+
     <EditText
         android:id="@+id/editTextNewBuildingName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="76dp"
         android:ems="10"
         android:hint="Gebäudenummer"
         android:inputType="textPersonName"
@@ -18,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
     <EditText
         android:id="@+id/editTextNewDescriptionBuildings"
@@ -33,21 +44,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNewBuildingName" />
 
-    <CheckBox
-        android:id="@+id/checkBoxDescriptionBuildings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNewBuildingName" />
-
     <Button
         android:id="@+id/buttonCreateNewBuilding"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="36dp"
         android:text="Erstellen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNewDescriptionBuildings" />

@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
             });
             builder.show();
         } else {
-            Toast.makeText(this, "x",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
 }
