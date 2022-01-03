@@ -35,8 +35,6 @@ public class NewRoomActivity extends AppCompatActivity{
         // QRCode Generator hinzufügen, Knöpfe anpassen(da diese grade nur paar Sachen testen), Room-Klasse vervollständigen/verbessern
 
         createLayoutNewRoom(mainActivity);
-
-        Room newRoom = new Room(5, 5);
     }
 
 
@@ -112,40 +110,5 @@ public class NewRoomActivity extends AppCompatActivity{
                 startActivity(intent);
             }
         });
-    }
-
-    private class Room {
-        //todo richtig implementieren, für Datenbank fertig machen, leere Eingaben nicht erlauben
-        public Room(int RoomID_in, int BuildingID_in){
-            setRoomID(RoomID_in);
-            setBuildingID(BuildingID_in);
-        }
-
-        private int RoomID_p = 0;
-        private void setRoomID(int RoomID_in){
-            if (RoomID_in <= 0) {
-                Context context = getApplicationContext();
-                CharSequence text = "Bitte gültige Raumnummer eingeben";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            } else {
-                RoomID_p = RoomID_in;
-            }
-        }
-        public int getRoomID(){ return RoomID_p; }
-
-        private int BuildingID_p = 0;
-        private void setBuildingID(int BuildingID_in){
-            if (BuildingID_in < 0) {
-                Context context = getApplicationContext();
-                CharSequence text = "Bitte gültige Gebäudenummer eingeben";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            } else {
-                BuildingID_p = BuildingID_in;
-            }
-        }
     }
 }
