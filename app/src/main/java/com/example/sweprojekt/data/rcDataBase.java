@@ -13,6 +13,8 @@ public abstract class rcDataBase extends RoomDatabase {
     public abstract ErrorTypeDao errorTypeDao();
     public abstract LogAttributeDao logAttributeDao();
     public abstract LogDao logDao();
+    public abstract RoomAttributeDao roomAttributeDao();
+    public abstract RoomAndBuildingDao roomAndBuildingDao();
     public abstract RoomDao roomDao();
     public abstract UserDao userDoa();
 

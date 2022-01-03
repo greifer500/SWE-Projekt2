@@ -54,8 +54,8 @@
             android:id="@+id/checkBoxSeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/editTextQuantitySeats"
-            app:layout_constraintEnd_toStartOf="@+id/editTextQuantitySeats"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextQuantityTables"
+            app:layout_constraintEnd_toStartOf="@+id/editTextQuantityTables"
             app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs" />
 
         <CheckBox
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/editTextTextPersonName5"
             app:layout_constraintEnd_toStartOf="@+id/editTextTextPersonName5"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             app:layout_constraintVertical_bias="0.0" />
 
         <EditText
@@ -83,7 +83,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextQuantitySeats"
+            android:id="@+id/editTextQuantityTables"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -105,8 +105,8 @@
             android:importantForAutofill="no"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            app:layout_constraintEnd_toEndOf="@+id/editTextQuantitySeats"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintEnd_toEndOf="@+id/editTextQuantityTables"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             tools:ignore="TextContrastCheck" />
 
         <Button

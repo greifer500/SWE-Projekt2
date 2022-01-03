@@ -16,6 +16,9 @@ public interface AttributeDao {
     @Query("Select * From rcAttribute where id = :id Limit 1")
     Attribute getByID(int id);
 
+    @Query("Select * From rcAttribute where description = :description Limit 1")
+    Attribute getByDescription(String description);
+
     @Insert
     void insertAll(Attribute... Attributes);
 

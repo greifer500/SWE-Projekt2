@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.sweprojekt.data.Building;
+import com.example.sweprojekt.data.RoomAndBuilding;
 import com.example.sweprojekt.data.rcDataBase;
 import com.example.sweprojekt.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -56,6 +57,15 @@ public class MainActivity extends AppCompatActivity {
             arrayListBuildings.add(bul.buildingPrefix + " - " + bul.description);
         }
     }
+
+    public void loadItemRoom() {
+        rcDataBase db = rcDataBase.getInstance(getApplicationContext());
+        List<RoomAndBuilding> buildings = db.roomAndBuildingDao().getAll();
+        for (RoomAndBuilding rab : buildings) {
+            arrayListRooms.add(rab.building.buildingPrefix + rab.room.roomNumber);
+        }
+    }
+
     public void deleteItemBuildings(int position){ arrayListBuildings.remove(position); }
 
     @Override
@@ -88,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         aradRooms = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListRooms);
         aradBuildings = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
         loadItemBuilding();
+        loadItemRoom();
 
     }
 

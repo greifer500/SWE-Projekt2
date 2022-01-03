@@ -1,11 +1,12 @@
 package com.example.sweprojekt.data;
 
+import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
-
+@Dao
 public interface RoomAttributeDao {
     @Query("SELECT * FROM rcRoom_Attribute")
     List<RoomAttribute> getAll();
