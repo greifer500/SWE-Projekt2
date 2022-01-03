@@ -24,7 +24,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/checkBoxChangeFaults"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <CheckBox
@@ -36,7 +36,7 @@
             app:layout_constraintEnd_toStartOf="@+id/spinnerNewRoomFaults"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables" />
 
         <Spinner
             android:id="@+id/spinnerNewRoomFaults4"
@@ -47,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/checkBoxChangeFaults"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <CheckBox
@@ -59,7 +59,7 @@
             app:layout_constraintEnd_toStartOf="@+id/spinnerNewRoomFaults"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables" />
 
         <Spinner
             android:id="@+id/spinnerNewRoomFaults3"
@@ -70,7 +70,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/checkBoxChangeFaults"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <CheckBox
@@ -82,7 +82,7 @@
             app:layout_constraintEnd_toStartOf="@+id/spinnerNewRoomFaults"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables" />
 
         <Spinner
             android:id="@+id/spinnerNewRoomFaults2"
@@ -93,7 +93,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/checkBoxChangeFaults"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             tools:ignore="SpeakableTextPresentCheck" />
 
         <CheckBox
@@ -105,7 +105,7 @@
             app:layout_constraintEnd_toStartOf="@+id/spinnerNewRoomFaults"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables" />
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar1"
@@ -146,8 +146,8 @@
             android:id="@+id/checkBoxSeat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/editTextQuantitySeats"
-            app:layout_constraintEnd_toStartOf="@+id/editTextQuantitySeats"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextQuantityTables"
+            app:layout_constraintEnd_toStartOf="@+id/editTextQuantityTables"
             app:layout_constraintTop_toBottomOf="@+id/editTextQuantityChairs" />
 
         <CheckBox
@@ -157,7 +157,7 @@
             android:layout_marginStart="42dp"
             app:layout_constraintEnd_toStartOf="@+id/spinnerNewRoomFaults"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables" />
 
         <EditText
             android:id="@+id/editTextQuantityChairs"
@@ -175,7 +175,7 @@
             tools:ignore="TextContrastCheck" />
 
         <EditText
-            android:id="@+id/editTextQuantitySeats"
+            android:id="@+id/editTextQuantityTables"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
@@ -234,7 +234,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/checkBoxChangeFaults"
-            app:layout_constraintTop_toBottomOf="@+id/editTextQuantitySeats"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuantityTables"
             tools:ignore="SpeakableTextPresentCheck" />
 
 
