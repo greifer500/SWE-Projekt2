@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.sweprojekt.data.Building;
+import com.example.sweprojekt.data.rcDataBase;
 import com.example.sweprojekt.ui.home.HomeFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -28,6 +30,7 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     //Kann und WIRD wahrscheinlich Memoryleaks verursachen
@@ -46,7 +49,13 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> aradBuildings;
 
     public void setAdapterBuildings(ListView lv){ lv.setAdapter(aradBuildings); }
-    public void addItemBuildings(String s){ arrayListBuildings.add(s); }
+    public void loadItemBuilding(){
+        rcDataBase db = rcDataBase.getInstance(getApplicationContext());
+        List<Building> buildings = db.buildingDao().getAll();
+        for (Building bul:buildings) {
+            arrayListBuildings.add(bul.buildingPrefix + " - " + bul.description);
+        }
+    }
     public void deleteItemBuildings(int position){ arrayListBuildings.remove(position); }
 
     @Override
