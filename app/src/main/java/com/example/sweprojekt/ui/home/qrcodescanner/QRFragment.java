@@ -28,7 +28,7 @@ public class QRFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.q_r_fragment, container, false).getRootView();
+        //View root = inflater.inflate(R.layout.q_r_fragment, container, false).getRootView();
 
         IntentIntegrator intentIntegrator = new IntentIntegrator(getActivity());
         intentIntegrator.setPrompt("Zurück für Scan Menü");
@@ -37,26 +37,8 @@ public class QRFragment extends Fragment {
         intentIntegrator.setCaptureActivity(Capture.class);
         intentIntegrator.initiateScan();
 
-        return root;
+        return inflater.inflate(R.layout.q_r_fragment, container, false).getRootView();
     }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if (intentResult.getContents()!= null){
-            AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-            builder.setTitle("Result");
-            builder.setMessage(intentResult.getContents());
-            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    dialog.dismiss();
-                }
-            });
-            builder.show();
-        } else {
-            Toast.makeText(getActivity(), "x",Toast.LENGTH_SHORT).show();
-        }
-    }
+
 }
 
