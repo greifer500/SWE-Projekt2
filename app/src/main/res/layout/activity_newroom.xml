@@ -11,6 +11,8 @@
         android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonCreateRoom"
+        app:layout_constraintTop_toBottomOf="@+id/buttonCreateRoom"
         tools:context=".ui.home.newroom.NewRoomActivity">
 
         <EditText
@@ -26,26 +28,12 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextRoomNumber"
             tools:ignore="TextContrastCheck" />
 
-        <ImageView
-            android:id="@+id/imageViewRandQRCode"
-            android:layout_width="0dp"
-            android:layout_height="293dp"
-            android:layout_marginStart="54dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="54dp"
-            android:contentDescription="@string/todo_durch_random_generierten_qrcode_ersetzen"
-            android:src="@drawable/ic_baseline_qr_code_scanner_24"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <EditText
             android:id="@+id/editTextRoomNumber"
             android:layout_width="302dp"
             android:layout_height="48dp"
             android:layout_marginStart="54dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="28dp"
             android:layout_marginEnd="54dp"
             android:ems="10"
             android:hint="@string/raum_id"
@@ -54,19 +42,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/buttonRandQRCode" />
-
-        <Button
-            android:id="@+id/buttonRandQRCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/qr_code_preview"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewRandQRCode"
-            tools:ignore="UsingOnClickInXml" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBox2"
@@ -151,8 +127,8 @@
             android:id="@+id/buttonTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginBottom="364dp"
             android:text="GoToNewBuilding"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

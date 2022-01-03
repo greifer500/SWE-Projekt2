@@ -41,17 +41,6 @@ public class NewRoomActivity extends AppCompatActivity{
         EditText eTRoomNumber = findViewById(R.id.editTextRoomNumber);
         EditText eTBuildingNumb = findViewById(R.id.editTextBuildingNumber);
 
-
-        Button btnRandQRCode = findViewById(R.id.buttonRandQRCode);
-        btnRandQRCode.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String rn = eTRoomNumber.getText().toString().trim();
-                String bn = eTBuildingNumb.getText().toString().trim();
-                //todo Random QRCode hier rein
-            }
-        });
-
         Button btnCreateRoom = findViewById(R.id.buttonCreateRoom);
         btnCreateRoom.setOnClickListener(new View.OnClickListener() {
             @Override
