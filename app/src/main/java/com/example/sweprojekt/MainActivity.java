@@ -50,6 +50,11 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<String> aradProtocols;
     public void setAdapterProtocols(ListView lv){ lv.setAdapter(aradProtocols); }
 
+    public void UpdateArrayAdapter(){
+        aradRooms.notifyDataSetChanged();
+        aradBuildings.notifyDataSetChanged();
+        aradProtocols.notifyDataSetChanged();
+    }
 
     public void setAdapterRooms(ListView lv){ lv.setAdapter(aradRooms); }
     public void addItemRooms(String s){ arrayListRooms.add(s); }

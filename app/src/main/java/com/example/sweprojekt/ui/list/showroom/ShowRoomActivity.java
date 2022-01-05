@@ -77,6 +77,8 @@ public class ShowRoomActivity extends AppCompatActivity {
                 db.roomAttributeDao().update(roomChairs);
                 db.roomAttributeDao().update(roomTable);
                 mainActivity.loadItemRoom();
+                mainActivity.UpdateArrayAdapter();
+                finish();
 
             }
         });
