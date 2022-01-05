@@ -155,7 +155,7 @@ public class NewRoomActivity extends AppCompatActivity{
 
                 db.roomDao().insertAll(room);
                 //get newly created room object
-                room = db.roomDao().getByRoomNumberAndBuildingID(building.id,roomNumber);
+                room = db.roomDao().getByRoomNumberAndBuildingID(roomNumber, building.id);
 
                 //create room attribute chair
                 RoomAttribute roomAttributeChair = new RoomAttribute();
