@@ -63,7 +63,7 @@ public class ShowRoomActivity extends AppCompatActivity {
         //eTVCN.setEnabled(false);
 
         EditText eTVRS = findViewById(R.id.editTextViewRoomSeats);
-        eTVRS.setText(roomChairs.attributeCount.toString());
+        eTVRS.setText(roomTable.attributeCount.toString());
         //eTVRS.setEnabled(false);
 
         Button btnCRA = findViewById(R.id.buttonChangeRoomAttributes);

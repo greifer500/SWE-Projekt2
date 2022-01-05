@@ -27,6 +27,8 @@ public class ProtocolFragment extends Fragment {
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.setAdapterProtocols(lv);
 
+
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
