@@ -10,10 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:layout_marginBottom="1dp"
         android:background="@color/purple_700"
-        app:layout_constraintBottom_toTopOf="@+id/tableLayoutProtocol"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:title="Protokol"
@@ -22,22 +19,17 @@
     <TableLayout
         android:id="@+id/tableLayoutProtocol"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="600dp"
         android:stretchColumns="1"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:layout_editor_absoluteX="-1dp">
 
         <TableRow>
+
             <TextView
-                android:text="Name"
                 android:layout_width="85dp"
                 android:layout_height="40dp"
-                />
+                android:text="Name" />
 
             <TextView
                 android:layout_width="96dp"
@@ -45,20 +37,29 @@
                 android:text="Soll" />
 
             <TextView
-                android:text="Ist"
                 android:layout_width="85dp"
                 android:layout_height="40dp"
-                />
+                android:text="Ist" />
 
             <TextView
-                android:text="Fehlerhaft"
                 android:layout_width="85dp"
                 android:layout_height="40dp"
-                />
+                android:text="Fehlerhaft" />
         </TableRow>
 
 
-
     </TableLayout>
+
+    <Button
+        android:id="@+id/buttonActivityProtocol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Speichern"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutProtocol"
+        app:layout_constraintVertical_bias="0.157" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
