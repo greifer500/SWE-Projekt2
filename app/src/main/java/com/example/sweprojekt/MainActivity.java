@@ -138,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 //todo room does not exist open new room
             }
         }
-        } else {
+        else {
             Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
