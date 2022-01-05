@@ -133,11 +133,7 @@ public class MainActivity extends AppCompatActivity {
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (intentResult.getContents()!= null){
             if (checkIfRoomExists(intentResult.getContents())) {
-                //todo room exists open log
-                Intent intent = new Intent(this, ShowRoomActivity.class);
-                String roomName = intentResult.getContents();
-                intent.putExtra("roomName", roomName);
-                startActivity(intent);
+                //kek
             }
             else{
                 //todo room does not exist open new room
