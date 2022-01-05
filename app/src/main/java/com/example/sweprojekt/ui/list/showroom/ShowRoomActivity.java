@@ -21,6 +21,8 @@ import javax.xml.transform.sax.SAXTransformerFactory;
 
 public class ShowRoomActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -50,7 +52,7 @@ public class ShowRoomActivity extends AppCompatActivity {
 
         EditText eTVRM = findViewById(R.id.editTextViewRoomNumber);
         eTVRM.setText(room.roomNumber.toString());
-        eTVRM.setEnabled(false);
+        //eTVRM.setEnabled(false);
 
         EditText eTVRB = findViewById(R.id.editTextViewRoomBuilding);
         eTVRB.setText(roomSplit[0]);
@@ -58,16 +60,23 @@ public class ShowRoomActivity extends AppCompatActivity {
 
         EditText eTVCN = findViewById(R.id.editTextViewRoomChairNumb);
         eTVCN.setText(roomChairs.attributeCount.toString());
-        eTVCN.setEnabled(false);
+        //eTVCN.setEnabled(false);
 
         EditText eTVRS = findViewById(R.id.editTextViewRoomSeats);
         eTVRS.setText(roomChairs.attributeCount.toString());
-        eTVRS.setEnabled(false);
+        //eTVRS.setEnabled(false);
 
         Button btnCRA = findViewById(R.id.buttonChangeRoomAttributes);
         btnCRA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                room.roomNumber = Integer.parseInt(eTVRM.getText().toString());
+                roomChairs.attributeCount  = Integer.parseInt(eTVCN.getText().toString());
+                roomTable.attributeCount =  Integer.parseInt(eTVRS.getText().toString());
+                db.roomDao().update(room);
+                db.roomAttributeDao().update(roomChairs);
+                db.roomAttributeDao().update(roomTable);
+                mainActivity.loadItemRoom();
 
             }
         });

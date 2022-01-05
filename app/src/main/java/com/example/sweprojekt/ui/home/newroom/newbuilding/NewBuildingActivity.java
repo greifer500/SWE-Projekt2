@@ -61,6 +61,7 @@ public class NewBuildingActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(mainActivity,"Eintrag Erstellt", Toast.LENGTH_SHORT);
                 toast.show();
                 finish();
+
             }
         });
     }

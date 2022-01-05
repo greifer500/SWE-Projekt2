@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     public void loadItemBuilding(){
         rcDataBase db = rcDataBase.getInstance(getApplicationContext());
         List<Building> buildings = db.buildingDao().getAll();
+        arrayListRooms.clear();
         for (Building bul:buildings) {
             arrayListBuildings.add(bul.buildingPrefix + " - " + bul.description);
         }
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
     public void loadItemRoom() {
         rcDataBase db = rcDataBase.getInstance(getApplicationContext());
         List<RoomAndBuilding> buildings = db.roomAndBuildingDao().getAll();
+        arrayListRooms.clear();
         for (RoomAndBuilding rab : buildings) {
             arrayListRooms.add(rab.building.buildingPrefix + rab.room.roomNumber);
         }
