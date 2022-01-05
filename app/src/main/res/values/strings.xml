@@ -15,4 +15,6 @@
     <string name="geb_udenummer">Gebäudenummer</string>
     <string name="anzahl_st_hle">Anzahl Stühle</string>
     <string name="anzahl_tischplatze">Anzahl Tischplatze</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
