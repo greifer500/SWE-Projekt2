@@ -131,13 +131,20 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (intentResult.getContents()!= null){
-            checkIfRoomExists(intentResult.getContents());
+            if (checkIfRoomExists(intentResult.getContents())) {
+                //todo room exists open log
+            }
+            else{
+                //todo room does not exist open new room
+            }
+        }
         } else {
             Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
 
     public boolean checkIfRoomExists(String result_in){
+
         String[] buildingSplit = result_in.split("(?<=\\D)(?=\\d)");
         String prefix = buildingSplit[0];
         int roomNumber= Integer.parseInt(buildingSplit[1]);
