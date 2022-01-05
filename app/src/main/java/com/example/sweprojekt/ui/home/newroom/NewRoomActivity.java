@@ -41,9 +41,10 @@ public class NewRoomActivity extends AppCompatActivity{
         createLayoutNewRoom(mainActivity);
 
         Bundle bundle = getIntent().getExtras();
-        int buildingID = bundle.getInt("buildingID");
-        int roomNumber = bundle.getInt("roomNumber");
-        if (buildingID != 0) {
+
+        if (bundle != null) {
+            int buildingID = bundle.getInt("buildingID");
+            int roomNumber = bundle.getInt("roomNumber");
             rcDataBase db = rcDataBase.getInstance(mainActivity);
             Building building = db.buildingDao().getByID(buildingID);
             String buildingName = building.buildingPrefix + " - " + building.description;
