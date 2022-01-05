@@ -22,7 +22,7 @@ public class ProtocolActivity extends AppCompatActivity {
         bntSaveProtocol.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo
+                //todo aids
             }
         });
 
