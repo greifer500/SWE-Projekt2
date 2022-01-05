@@ -37,6 +37,8 @@ public class RoomsListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ShowRoomActivity.class);
+                String roomName = parent.getItemAtPosition(position).toString();
+                intent.putExtra("roomName", roomName);
                 startActivity(intent);
             }
         });

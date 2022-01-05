@@ -18,6 +18,9 @@ public interface BuildingDao {
     @Query("Select * From rcBuilding where building_prefix = :prefix AND description = :description Limit 1")
     Building getByName(String prefix, String description);
 
+    @Query("Select * From rcBuilding where building_prefix = :prefix Limit 1")
+    Building getByPrefix(String prefix);
+
     @Insert
     void insertAll(Building... Buildings);
 

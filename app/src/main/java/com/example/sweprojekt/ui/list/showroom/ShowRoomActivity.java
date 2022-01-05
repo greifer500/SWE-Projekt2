@@ -11,8 +11,13 @@ import android.widget.EditText;
 
 import com.example.sweprojekt.MainActivity;
 import com.example.sweprojekt.R;
+import com.example.sweprojekt.data.Attribute;
+import com.example.sweprojekt.data.Building;
 import com.example.sweprojekt.data.Room;
+import com.example.sweprojekt.data.RoomAttribute;
 import com.example.sweprojekt.data.rcDataBase;
+
+import javax.xml.transform.sax.SAXTransformerFactory;
 
 public class ShowRoomActivity extends AppCompatActivity {
 
@@ -29,25 +34,34 @@ public class ShowRoomActivity extends AppCompatActivity {
         MainActivity mainActivity = MainActivity.getInstance();
 
         String roomName = getIntent().getExtras().getString("roomName");
+
         String[] roomSplit = roomName.split("(?<=\\D)(?=\\d)");
+        String prefix = roomSplit[0];
+        int roomNumber= Integer.parseInt(roomSplit[1]);
         rcDataBase db = rcDataBase.getInstance(mainActivity);
-        Room room = db.roomDao().getRoomByName(roomSplit[0], Integer.getInteger(roomSplit[1]));
+        Building building = db.buildingDao().getByPrefix(prefix);
+        Room room = db.roomDao().getByRoomNumberAndBuildingID(roomNumber,building.id);
+        Attribute chair = db.attributeDao().getByDescription("Chair");
+        RoomAttribute roomChairs = db.roomAttributeDao().getByID(room.id,chair.id);
+        Attribute table = db.attributeDao().getByDescription("Table");
+        RoomAttribute roomTable = db.roomAttributeDao().getByID(room.id,table.id);
+
 
 
         EditText eTVRM = findViewById(R.id.editTextViewRoomNumber);
-        eTVRM.setText("");
+        eTVRM.setText(room.roomNumber.toString());
         eTVRM.setEnabled(false);
 
         EditText eTVRB = findViewById(R.id.editTextViewRoomBuilding);
-        eTVRB.setText("");
+        eTVRB.setText(roomSplit[0]);
         eTVRB.setEnabled(false);
 
         EditText eTVCN = findViewById(R.id.editTextViewRoomChairNumb);
-        eTVCN.setText("");
+        eTVCN.setText(roomChairs.attributeCount.toString());
         eTVCN.setEnabled(false);
 
         EditText eTVRS = findViewById(R.id.editTextViewRoomSeats);
-        eTVRS.setText("");
+        eTVRS.setText(roomChairs.attributeCount.toString());
         eTVRS.setEnabled(false);
 
         Button btnCRA = findViewById(R.id.buttonChangeRoomAttributes);
