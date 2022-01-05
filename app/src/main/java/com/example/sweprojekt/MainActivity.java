@@ -15,6 +15,7 @@ import com.example.sweprojekt.data.Room;
 import com.example.sweprojekt.data.RoomAndBuilding;
 import com.example.sweprojekt.data.rcDataBase;
 import com.example.sweprojekt.ui.home.HomeFragment;
+import com.example.sweprojekt.ui.list.showroom.ShowRoomActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.Nullable;
@@ -133,6 +134,10 @@ public class MainActivity extends AppCompatActivity {
         if (intentResult.getContents()!= null){
             if (checkIfRoomExists(intentResult.getContents())) {
                 //todo room exists open log
+                Intent intent = new Intent(this, ShowRoomActivity.class);
+                String roomName = intentResult.getContents();
+                intent.putExtra("roomName", roomName);
+                startActivity(intent);
             }
             else{
                 //todo room does not exist open new room
@@ -154,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
         Room room = db.roomDao().getByRoomNumberAndBuildingID(roomNumber,building.id);
-        return room == null;
+        return room != null;
     }
 
     public ArrayAdapter<String> getAradBuildings() {
