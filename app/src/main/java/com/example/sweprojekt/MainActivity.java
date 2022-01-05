@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.sweprojekt.data.Building;
+import com.example.sweprojekt.data.Room;
 import com.example.sweprojekt.data.RoomAndBuilding;
 import com.example.sweprojekt.data.rcDataBase;
 import com.example.sweprojekt.ui.home.HomeFragment;
@@ -37,10 +38,7 @@ public class MainActivity extends AppCompatActivity {
     //Kann und WIRD wahrscheinlich Memoryleaks verursachen
     private static MainActivity mainActivityInstance;
 
-
     private ActivityMainBinding binding;
-
-    private String Roomstring;
 
     private ArrayList<String> arrayListRooms = new ArrayList<>();
     private ArrayAdapter<String> aradRooms;
@@ -131,18 +129,21 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (intentResult.getContents()!= null){
-            setIntentResult(intentResult.getContents());
+            checkIfRoomExists(intentResult.getContents());
         } else {
             Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void setIntentResult(String string){
-        Roomstring = string;
-    }
+    public boolean checkIfRoomExists(String result_in){
+        String[] buildingSplit = result_in.split("(?<=\\D)(?=\\d)");
+        String prefix = buildingSplit[0];
+        int roomNumber= Integer.parseInt(buildingSplit[1]);
+        rcDataBase db = rcDataBase.getInstance(this);
+        Building building = db.buildingDao().getByPrefix(prefix);
+        Room room = db.roomDao().getByRoomNumberAndBuildingID(roomNumber,building.id);
 
-    public String getIntentResult(){
-        return Roomstring;
+        return room == null;
     }
 
     public ArrayAdapter<String> getAradBuildings() {
