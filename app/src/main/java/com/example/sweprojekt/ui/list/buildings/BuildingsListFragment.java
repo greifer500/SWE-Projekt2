@@ -32,13 +32,16 @@ public class BuildingsListFragment extends Fragment {
         MainActivity mainActivity = (MainActivity) getActivity();
         mainActivity.setAdapterBuildings(lv);
 
+
+
+
         //todo Öffnen vom Gebäude mit spezifischer Information (wahrscheinlich in einer Activity mit einem Fragment)
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ShowBuildingActivity.class);
                 String roomName = parent.getItemAtPosition(position).toString();
-                intent.putExtra("roomName", roomName);
+                intent.putExtra("buildingName", roomName);
                 startActivity(intent);
             }
         });
