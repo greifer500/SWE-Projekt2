@@ -31,6 +31,10 @@ public class NewBuildingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_building);
 
         createLayoutNewBuilding(mainActivity);
+
+
+
+
     }
 
     private void createLayoutNewBuilding(MainActivity mainActivity) {

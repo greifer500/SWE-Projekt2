@@ -15,6 +15,8 @@ import com.example.sweprojekt.data.Room;
 import com.example.sweprojekt.data.RoomAndBuilding;
 import com.example.sweprojekt.data.rcDataBase;
 import com.example.sweprojekt.ui.home.HomeFragment;
+import com.example.sweprojekt.ui.home.newroom.NewRoomActivity;
+import com.example.sweprojekt.ui.home.protocol.ProtocolActivity;
 import com.example.sweprojekt.ui.list.showroom.ShowRoomActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -132,19 +134,14 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
         if (intentResult.getContents()!= null){
-            if (checkIfRoomExists(intentResult.getContents())) {
-                //kek
-            }
-            else{
-                //todo room does not exist open new room
-            }
+            checkIfRoomExists(intentResult.getContents());
         }
         else {
             Toast.makeText(this, "Kein Raum gefunden",Toast.LENGTH_SHORT).show();
         }
     }
 
-    public boolean checkIfRoomExists(String result_in){
+    public void checkIfRoomExists(String result_in){
 
         String[] buildingSplit = result_in.split("(?<=\\D)(?=\\d)");
         String prefix = buildingSplit[0];
@@ -152,10 +149,29 @@ public class MainActivity extends AppCompatActivity {
         rcDataBase db = rcDataBase.getInstance(this);
         Building building = db.buildingDao().getByPrefix(prefix);
         if (building == null){
-            return false;
+            Toast.makeText(this, "Gebäude existiert nicht",Toast.LENGTH_SHORT).show();
+            return;
         }
         Room room = db.roomDao().getByRoomNumberAndBuildingID(roomNumber,building.id);
-        return room != null;
+        if(room == null){
+            AddNewRoom(building.id ,roomNumber);
+            return;
+        }
+        AddNewLog(room);
+
+    }
+
+    public void AddNewRoom(int buildingID, int roomNumber){
+        Intent intent = new Intent(this, NewRoomActivity.class);
+        intent.putExtra("buildingID", buildingID);
+        intent.putExtra("roomNumber", roomNumber);
+        startActivity(intent);
+    }
+
+    public void AddNewLog(Room room){
+        Intent intent = new Intent(this, ProtocolActivity.class);
+        intent.putExtra("room", room.id);
+        startActivity(intent);
     }
 
     public ArrayAdapter<String> getAradBuildings() {

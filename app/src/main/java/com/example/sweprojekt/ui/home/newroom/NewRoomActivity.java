@@ -32,12 +32,26 @@ public class NewRoomActivity extends AppCompatActivity{
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
 
+
         setContentView(R.layout.activity_newroom);
 
         //todo diese Activity vervollständigen, alles miteinander Verknüpfen, Gebäudeauswahl zu Liste machen,
         // QRCode Generator hinzufügen, Knöpfe anpassen(da diese grade nur paar Sachen testen), Room-Klasse vervollständigen/verbessern
 
         createLayoutNewRoom(mainActivity);
+
+        Bundle bundle = getIntent().getExtras();
+        int buildingID = bundle.getInt("buildingID");
+        int roomNumber = bundle.getInt("roomNumber");
+        if (buildingID != 0) {
+            rcDataBase db = rcDataBase.getInstance(mainActivity);
+            Building building = db.buildingDao().getByID(buildingID);
+            String buildingName = building.buildingPrefix + " - " + building.description;
+            Spinner spinner = findViewById(R.id.spinner);
+            spinner.setSelection(mainActivity.getAradBuildings().getPosition(buildingName));
+            EditText editTextRoomNumber = findViewById(R.id.editTextRoomNumber);
+            editTextRoomNumber.setText(String.valueOf(roomNumber));
+        }
     }
 
 

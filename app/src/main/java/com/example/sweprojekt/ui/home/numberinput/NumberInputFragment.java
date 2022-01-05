@@ -45,11 +45,7 @@ public class NumberInputFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String str = editNumberInput.getText().toString();
-                if (mainActivity.checkIfRoomExists(str)){
-
-                } else {
-
-                }
+               mainActivity.checkIfRoomExists(str);
             }
         });
     }
