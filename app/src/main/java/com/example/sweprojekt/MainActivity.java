@@ -143,8 +143,10 @@ public class MainActivity extends AppCompatActivity {
         int roomNumber= Integer.parseInt(buildingSplit[1]);
         rcDataBase db = rcDataBase.getInstance(this);
         Building building = db.buildingDao().getByPrefix(prefix);
+        if (building == null){
+            return false;
+        }
         Room room = db.roomDao().getByRoomNumberAndBuildingID(roomNumber,building.id);
-
         return room == null;
     }
 
