@@ -46,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<String> arrayListRooms = new ArrayList<>();
     private ArrayAdapter<String> aradRooms;
 
+    private ArrayList<String> arrayListProtocol = new ArrayList<>();
+    private ArrayAdapter<String> aradProtocols;
+    public void setAdapterProtocols(ListView lv){ lv.setAdapter(aradProtocols); }
+
+
     public void setAdapterRooms(ListView lv){ lv.setAdapter(aradRooms); }
     public void addItemRooms(String s){ arrayListRooms.add(s); }
     public void deleteItemRooms(int position){ arrayListRooms.remove(position); }
@@ -101,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         aradRooms = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListRooms);
         aradBuildings = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
+        aradProtocols = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListRooms);
         loadItemBuilding();
         loadItemRoom();
 
@@ -177,4 +183,5 @@ public class MainActivity extends AppCompatActivity {
     public ArrayAdapter<String> getAradBuildings() {
         return aradBuildings;
     }
+    public ArrayAdapter<String> getAradProtocols() { return aradProtocols; }
 }

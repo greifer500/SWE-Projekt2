@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import com.example.sweprojekt.R;
 import com.example.sweprojekt.databinding.FragmentListBinding;
 import com.example.sweprojekt.ui.list.buildings.BuildingsListFragment;
+import com.example.sweprojekt.ui.list.protocol.ProtocolFragment;
 import com.example.sweprojekt.ui.list.rooms.RoomsListFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -44,6 +45,8 @@ public class ListFragment extends Fragment {
                     case 1:
                         createFragmentManagerBuildings();
                         break;
+                    case 2:
+                        createFragmentManagerProtocol();
                 }
             }
 
@@ -57,6 +60,15 @@ public class ListFragment extends Fragment {
 
             }
         });
+    }
+
+    private void createFragmentManagerProtocol() {
+        FragmentManager fragmentManager = getParentFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerList, ProtocolFragment.class, null)
+                .setReorderingAllowed(true)
+                .addToBackStack(null)
+                .commit();
     }
 
     private void createFragmentManagerRooms() {
