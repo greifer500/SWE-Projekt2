@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
         aradRooms = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListRooms);
         aradBuildings = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListBuildings);
-        aradProtocols = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListRooms);
+        aradProtocols = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListProtocol);
         loadItemBuilding();
         loadItemRoom();
 
