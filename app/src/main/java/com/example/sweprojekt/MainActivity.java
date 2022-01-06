@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
         List<LogAndRoom> logs = db.logAndRoomDao().getAll();
         aradProtocols.clear();
         for(LogAndRoom lar : logs){
-            arrayListProtocol.add(lar.log.id.toString() + " - " +  lar.room.roomNumber);
+            Building building = db.buildingDao().getByID(lar.room.buildingID);
+            arrayListProtocol.add(lar.log.id.toString() + " - " + building.buildingPrefix + lar.room.roomNumber);
         }
 
     }
