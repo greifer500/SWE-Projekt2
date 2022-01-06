@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.sweprojekt.data.Building;
+import com.example.sweprojekt.data.Log;
+import com.example.sweprojekt.data.LogAndRoom;
 import com.example.sweprojekt.data.Room;
 import com.example.sweprojekt.data.RoomAndBuilding;
 import com.example.sweprojekt.data.rcDataBase;
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
     public void loadItemBuilding(){
         rcDataBase db = rcDataBase.getInstance(getApplicationContext());
         List<Building> buildings = db.buildingDao().getAll();
-        arrayListRooms.clear();
+        arrayListBuildings.clear();
         for (Building bul:buildings) {
             arrayListBuildings.add(bul.buildingPrefix + " - " + bul.description);
         }
@@ -78,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
         for (RoomAndBuilding rab : buildings) {
             arrayListRooms.add(rab.building.buildingPrefix + rab.room.roomNumber);
         }
+    }
+
+    public void loadItemLog(){
+        rcDataBase db = rcDataBase.getInstance(getApplicationContext());
+        List<LogAndRoom> logs = db.logAndRoomDao().getAll();
+        aradProtocols.clear();
+        for(LogAndRoom lar : logs){
+            arrayListProtocol.add(lar.log.id.toString() + " - " +  lar.room.roomNumber);
+        }
+
     }
 
     public void deleteItemBuildings(int position){ arrayListBuildings.remove(position); }
@@ -114,6 +126,7 @@ public class MainActivity extends AppCompatActivity {
         aradProtocols = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, arrayListProtocol);
         loadItemBuilding();
         loadItemRoom();
+        loadItemLog();
 
     }
 
@@ -181,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void AddNewLog(Room room){
         Intent intent = new Intent(this, ProtocolActivity.class);
-        intent.putExtra("room", room.id);
+        intent.putExtra("roomID", room.id);
         startActivity(intent);
     }
 

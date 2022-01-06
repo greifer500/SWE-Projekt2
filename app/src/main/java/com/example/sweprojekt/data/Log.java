@@ -31,8 +31,4 @@ public class Log {
     public Integer timestamp;
 
 
-
-
-
-
 }

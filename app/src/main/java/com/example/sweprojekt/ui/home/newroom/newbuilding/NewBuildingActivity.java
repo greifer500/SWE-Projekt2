@@ -59,7 +59,7 @@ public class NewBuildingActivity extends AppCompatActivity {
                 building.description = buildingName;
                 db.buildingDao().insertAll(building);
                 mainActivity.loadItemBuilding();
-
+                mainActivity.UpdateArrayAdapter();
 
 
                 Toast toast = Toast.makeText(mainActivity,"Eintrag Erstellt", Toast.LENGTH_SHORT);

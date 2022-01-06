@@ -2,11 +2,14 @@ package com.example.sweprojekt.data;
 
 import android.content.Context;
 
+import androidx.room.AutoMigration;
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {Attribute.class,Building.class,ErrorType.class, Log.class, LogAttribute.class, com.example.sweprojekt.data.Room.class, RoomAttribute.class, User.class}, version = 1, exportSchema = false)
+@Database(entities = {Attribute.class,Building.class,ErrorType.class, Log.class, LogAttribute.class, com.example.sweprojekt.data.Room.class, RoomAttribute.class, User.class},
+        version = 3,
+        exportSchema = true)
 public abstract class rcDataBase extends RoomDatabase {
     public abstract AttributeDao attributeDao();
     public abstract BuildingDao buildingDao();
@@ -17,10 +20,11 @@ public abstract class rcDataBase extends RoomDatabase {
     public abstract RoomAndBuildingDao roomAndBuildingDao();
     public abstract RoomDao roomDao();
     public abstract UserDao userDoa();
+    public abstract LogAndRoomDao logAndRoomDao();
 
 
 
-    private static final String DB_NAME = "rcDataBase.db";
+    private static final String DB_NAME = "rcDataBase3.db";
     private static volatile rcDataBase instance;
 
     public static synchronized rcDataBase getInstance(Context context) {

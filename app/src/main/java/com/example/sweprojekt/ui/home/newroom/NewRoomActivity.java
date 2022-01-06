@@ -162,7 +162,7 @@ public class NewRoomActivity extends AppCompatActivity{
                 roomAttributeChair.roomID = room.id;
                 roomAttributeChair.attributeID = attributeChair.id;
                 EditText editTextChairCount = findViewById(R.id.editTextQuantityChairs);
-                String sChairCount =   editTextRoomNumber.getText().toString();
+                String sChairCount =   editTextChairCount.getText().toString();
                 int chairCount = Integer.valueOf(sChairCount);
                 roomAttributeChair.attributeCount = chairCount;
                 db.roomAttributeDao().insertAll(roomAttributeChair);

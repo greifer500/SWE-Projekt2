@@ -33,7 +33,10 @@ public class ProtocolFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getActivity(), ProtocolActivity.class);
-                //todo richtig rein hier
+                String sProtocolID = parent.getItemAtPosition(position).toString();
+                String[] splitProtocol = sProtocolID.split(" - ");
+                int protocolID = Integer.valueOf(splitProtocol[0]);
+                intent.putExtra("logID", protocolID);
                 startActivity(intent);
             }
         });

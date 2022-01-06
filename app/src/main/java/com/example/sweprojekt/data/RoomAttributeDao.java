@@ -6,6 +6,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.sweprojekt.ui.list.ListFragment;
+
 import java.util.List;
 @Dao
 public interface RoomAttributeDao {
@@ -14,6 +16,9 @@ public interface RoomAttributeDao {
 
     @Query("Select * From rcRoom_Attribute where room_id = :roomID AND attribute_id = :attributeID Limit 1")
     RoomAttribute getByID(int roomID, int attributeID);
+
+    @Query("Select * From rcRoom_Attribute where room_id = :roomID  ")
+    List<RoomAttribute>getByRoom(int roomID);
 
     @Insert
     void insertAll(RoomAttribute... RoomAttributes);

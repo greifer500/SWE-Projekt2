@@ -14,6 +14,10 @@ public interface LogDao {
     @Query("Select * From rcLog where id = :id Limit 1")
     Log getByID(int id);
 
+    @Query("Select * From rcLog where room_id = :roomID " +
+            "AND id = (Select Max(id) from rcLog where room_id = :roomID) Limit 1")
+    Log getLatestByRoomID(int roomID);
+
     @Insert
     void insertAll(Log... Logs);
 
