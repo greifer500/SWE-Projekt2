@@ -40,11 +40,11 @@ public class ShowBuildingActivity extends AppCompatActivity {
         Toolbar tSB = findViewById(R.id.toolbarBuildings);
         tSB.setTitle("Gebäude "  + "Nummer"); //todo funktion für Gebaäudename
 
-        EditText etSBN = findViewById(R.id.editTextShowBuildingName);
+        EditText etSBN = findViewById(R.id.editTextShowBuildingDescription);
         etSBN.setText(building.description);
         etSBN.setEnabled(false);
 
-        EditText etSBD = findViewById(R.id.editTextShowBuildingDescription);
+        EditText etSBD = findViewById(R.id.editTextShowBuildingName);
         etSBD.setText(building.buildingPrefix);
 
         etSBD.setEnabled(false);
